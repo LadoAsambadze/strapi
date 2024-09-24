@@ -1192,7 +1192,7 @@ export interface ApiRepertoireRepertoire extends Schema.CollectionType {
     duration: Attribute.Time &
       Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     place: Attribute.String &
@@ -1200,18 +1200,14 @@ export interface ApiRepertoireRepertoire extends Schema.CollectionType {
         i18n: {
           localized: true;
         };
-      }>;
+      }> &
+      Attribute.DefaultTo<'\u10D1\u10D0\u10D7\u10E3\u10DB\u10D8\u10E1 \u10D3\u10E0\u10D0\u10DB\u10D0\u10E2\u10E3\u10DA\u10D8 \u10D7\u10D4\u10D0\u10E2\u10E0\u10D8 / Batumi drama theatre'>;
     premiereDate2: Attribute.DateTime &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
         };
       }>;
-    dasis: Attribute.Relation<
-      'api::repertoire.repertoire',
-      'manyToMany',
-      'api::troupe.troupe'
-    >;
     ticketPrice: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1228,7 +1224,7 @@ export interface ApiRepertoireRepertoire extends Schema.CollectionType {
     premiereDate3: Attribute.DateTime &
       Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     premiereDate4: Attribute.DateTime &
@@ -1370,11 +1366,6 @@ export interface ApiTroupeTroupe extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    repertuaris: Attribute.Relation<
-      'api::troupe.troupe',
-      'manyToMany',
-      'api::repertoire.repertoire'
-    >;
     description: Attribute.Blocks &
       Attribute.SetPluginOptions<{
         i18n: {

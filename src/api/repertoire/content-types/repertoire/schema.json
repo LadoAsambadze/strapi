@@ -91,7 +91,7 @@
     "duration": {
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
       "type": "time"
@@ -102,7 +102,8 @@
           "localized": true
         }
       },
-      "type": "string"
+      "type": "string",
+      "default": "ბათუმის დრამატული თეატრი / Batumi drama theatre"
     },
     "premiereDate2": {
       "pluginOptions": {
@@ -111,12 +112,6 @@
         }
       },
       "type": "datetime"
-    },
-    "dasis": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::troupe.troupe",
-      "inversedBy": "repertuaris"
     },
     "ticketPrice": {
       "pluginOptions": {
@@ -138,7 +133,7 @@
     "premiereDate3": {
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
       "type": "datetime"
